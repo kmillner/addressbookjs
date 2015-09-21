@@ -24,18 +24,19 @@ $(document).ready(function() {
                          lastName: inputtedLastName,
                          addresses: [] };
 
-      $(".new-address").each(function(){
+      $(".new-address").each(function() {
         var inputtedStreet = $(this).find("input.new-street").val();
         var inputtedCity = $(this).find("input.new-city").val();
         var inputtedState = $(this).find("input.new-state").val();
+        
         var newAddress = { street: inputtedStreet, city: inputtedCity, state: inputtedState };
         newContact.addresses.push(newAddress);
-      })
+      });
 
       $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + " " + newContact.lastName + "</span></li>");
 
-      $("input.new-first-name").val("");
-      $("input.new-last-name").val("");
+      $("input#new-first-name").val("");
+      $("input#new-last-name").val("");
       $("input.new-street").val("");
       $("input.new-city").val("");
       $("input.new-state").val("");
