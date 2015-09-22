@@ -1,5 +1,28 @@
-describe('bottlesOfBeer', function() {
-  it("counts down one number from the user inputted number", function() {
-    expect(bottlesOfBeer(3)).to.equal("3 bottles of beer on the wall. 3 bottles of beer. Take one down pass it around- 2 bottles of beer on the wall. 2 bottles of beer on the wall. 2 bottles of beer. Take one down pass it around- 1 bottles of beer on the wall. 1 bottles of beer on the wall. 1 bottles of beer. Take one down pass it around- 0 bottles of beer on the wall. No more bottles of beer on the wall no more bottles of beer. Go to the store and buy some more 99 bottles of beer on the wall.");
+describe('Contact', function() {
+  it("creates a new contact with the given specifications", function() {
+    var testContact = new Contact("Rita","Moreno");
+    expect(testContact.firstName).to.equal("Rita");
+    expect(testContact.lastName).to.equal("Moreno");
+    expect(testContact.addresses).to.eql([]);
+  });
+});
+
+it("adds the fullName method to all contacts", function() {
+    var testContact = new Contact("Sherlock","Holmes");
+    expect(testContact.fullName()).to.equal("Sherlock Holmes");
+});
+
+describe('Address', function() {
+  it("creates a new address with the given specifications", function() {
+    var testAddress = new Address("Home", "123 Main St", "Test City","Test State");
+    expect(testAddress.locale).to.equal("Home");
+    expect(testAddress.street).to.equal("123 Main St");
+    expect(testAddress.city).to.equal("Test City");
+    expect(testAddress.state).to.equal("Test State");
+  });
+
+  it("adds the fullAddress method to all addresses", function() {
+    var testAddress = new Address("Home", "123 Main St", "Test City","Test State");
+    expect(testAddress.fullAddress()).to.equal("Home: 123 Main St, Test City, Test State");
   });
 });
